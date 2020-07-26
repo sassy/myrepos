@@ -5,7 +5,7 @@ interface RepoName {
 }
 
 interface Datas {
-  viewer: {
+  user: {
     repositories: {
       nodes: RepoName[];
     };
@@ -21,8 +21,15 @@ async function main() {
     },
   });
 
+  if (process.argv.length <= 2) {
+    console.error("Please argv user name");
+    return;
+  }
+
+  const user: string = process.argv[2];
+
   const query = `{
-        viewer{
+        user( login: "${user}") {
             repositories(last: 100, isFork: false) {
                 nodes{
                     name
@@ -32,7 +39,7 @@ async function main() {
     }`;
 
   const data: Datas = await graphQLClient.request(query);
-  data.viewer.repositories.nodes.forEach((repo: RepoName) => {
+  data.user.repositories.nodes.forEach((repo: RepoName) => {
     console.log(repo.name);
   });
 }

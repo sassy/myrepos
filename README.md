@@ -6,7 +6,7 @@ Listing my repositories
 
 ```
 $ export GITHUB_OAUTH_TOKEN=XXXXXXXXXXXXXXXXXXX
-$ ./bin/myrepos
+$ ./bin/myrepos sassy
 ```
 
 ## Installation

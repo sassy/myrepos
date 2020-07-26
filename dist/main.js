@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_request_1 = require("graphql-request");
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var endpoint, graphQLClient, query, data;
+        var endpoint, graphQLClient, user, query, data;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -49,11 +49,16 @@ function main() {
                             Authorization: "bearer " + process.env.GITHUB_OAUTH_TOKEN,
                         },
                     });
-                    query = "{\n        viewer{\n            repositories(last: 100, isFork: false) {\n                nodes{\n                    name\n                }\n            }\n        }\n    }";
+                    if (process.argv.length <= 2) {
+                        console.error("Please argv user name");
+                        return [2 /*return*/];
+                    }
+                    user = process.argv[2];
+                    query = "{\n        user( login: \"" + user + "\") {\n            repositories(last: 100, isFork: false) {\n                nodes{\n                    name\n                }\n            }\n        }\n    }";
                     return [4 /*yield*/, graphQLClient.request(query)];
                 case 1:
                     data = _a.sent();
-                    data.viewer.repositories.nodes.forEach(function (repo) {
+                    data.user.repositories.nodes.forEach(function (repo) {
                         console.log(repo.name);
                     });
                     return [2 /*return*/];
