@@ -12,7 +12,7 @@ $ ./bin/myrepos
 ## Installation
 
 ```
-$ npm install git+https://sassy/myrepos.git
+$ npm install -g git+ssh://git@github.com:sassy/myrepos.git
 ```
 
 ## License
