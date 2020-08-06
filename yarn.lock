@@ -497,10 +497,10 @@ globals@^12.1.0:
   dependencies:
     type-fest "^0.8.1"
 
-graphql-request@2.1.0-next.3:
-  version "2.1.0-next.3"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-2.1.0-next.3.tgz#62a5b3f784e72e950fa6776a4d5725eec5f5fed9"
-  integrity sha512-eXBvuvJLisrEjv6Roq7cp+X9fjW7pTSTF4M7lFlOtADQoisLbkOb5WXeZYbD4rbHJbOU4U7/JRxG73e16Rz6YQ==
+graphql-request@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.0.0.tgz#942d81bbd621cc2223d35fbf2b42edf8be822b83"
+  integrity sha512-zW8AuLnKMYOnpVKdANU9FzLDoj4u4AoU6KZ79e+BcJaNiuw/vgCJ0p7ppDMSDrW77a12Moa7J7Mg4w0f9Kd/Kg==
   dependencies:
     cross-fetch "^3.0.4"
 
